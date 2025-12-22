@@ -12,11 +12,14 @@
 <!-- NAVBAR -->
 <header class="nav">
   <div class="logo"><img src="/images/KORVA Tra.svg" alt=""></div>
-  <nav>
-    <a href="#">Shop</a>
-    <a href="#">Contact</a>
-    <a href="#">About</a>
-  </nav>
+  <!-- Search Section -->
+<section class="search-section">
+    <form class="search-form" onsubmit="return searchProducts()">
+        <input type="text" id="searchInput" placeholder="Search for products..." required>
+        <button type="submit">Search</button>
+    </form>
+</section>
+ 
 </header>
 
 <section class="hero">
@@ -29,55 +32,160 @@
 
 <!-- CATEGORY BAR -->
 <section class="category-bar">
-  <span>Wear the Basics</span>
+  <img src="images/star.svg" alt="">
+  <span>Wear the Basics  </span>
+  <img src="images/star.svg" alt="">
+
   <span>Inspire Your Every Day</span>
+  <img src="images/star.svg" alt="">
+
   <span>Wear the Basics</span>
+  <img src="images/star.svg" alt="">
+
   <span>Inspire Your Every Day</span>
-</section>
-
-<!-- PRODUCT GRID -->
-<section class="product-grid">
-
-  <div class="card">
-    <img src="images/p1.png">
-    <h3>Phone Holder Saki</h3>
-    <p>$29.90</p>
-    <div class="card-btns">
-      <button>Add to Cart</button>
-      <button class="buy">Buy Now</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="images/p2.png">
-    <h3>Headset</h3>
-    <p>$12.00</p>
-    <div class="card-btns">
-      <button>Add to Cart</button>
-      <button class="buy">Buy Now</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="images/p3.png">
-    <h3>Adudu Cleaner</h3>
-    <p>$29.90</p>
-    <div class="card-btns">
-      <button>Add to Cart</button>
-      <button class="buy">Buy Now</button>
-    </div>
-  </div>
+  <img src="images/star.svg" alt="">
 
 </section>
 
-<!-- PAGINATION -->
-<div class="pagination">
-  <span>‹</span>
-  <span class="active">1</span>
-  <span>2</span>
-  <span>3</span>
-  <span>›</span>
-</div>
+<section class="products">
+  <div class="product-grid">
+
+    <!-- CARD -->
+    <div class="product-card">
+      <span class="tag">Other</span>
+      <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Phone Holder Saki</h3>
+      <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="tag">Music</span>
+            <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Headset</h3>
+     <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="tag">Other</span>
+       <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Adudu Cleaner</h3>
+
+      <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+       <div class="product-card">
+      <span class="tag">Music</span>
+            <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Headset</h3>
+     <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="tag">Other</span>
+       <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Adudu Cleaner</h3>
+
+      <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+       <div class="product-card">
+      <span class="tag">Music</span>
+            <img src="images/Stock Images/st1 - Edited.png" alt="">
+      <h3>Headset</h3>
+     <div class="lay1">
+        <p class="pct">Now 50% Off</p>
+      <p class="price">$29.90</p>
+      </div>
+      <div class="actions">
+        <button class="cart">Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+
+   
+
+    <!-- duplicate to make full rows -->
+  </div>
+</section>
+
+<section class="category-hero">
+  <div class="category-slider">
+
+    <div class="slide active">
+      <div class="slide-text">
+        <h1>Every grail has a story</h1>
+        <p>Take home collectibles to start the next chapter.</p>
+        <button>Shop now</button>
+      </div>
+
+      <div class="slide-items">
+        <div class="item">
+          <img src="images/coin.png" />
+          <span>Coins ›</span>
+        </div>
+        <div class="item">
+          <img src="images/sports.png" />
+          <span>Sports memorabilia ›</span>
+        </div>
+        <div class="item">
+          <img src="images/antiques.png" />
+          <span>Antiques ›</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+
 
 <script src="/js/script.js"></script>
 </body>
