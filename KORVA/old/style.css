@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* NAV */
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 10;
+  margin-top: 10px;
+}
+
+
+
+.search-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+  margin-top: -10px;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    border-radius: 10px;
+    width: 300px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    background-color: #09083c;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-family: ubuntu;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #09083c;
+}
+
+.search-form button i {
+    margin-right: 5px;
+}
+
+.nav .logo img{
+    height: 50px;
+  margin-top: -15px;
+
+}
+.nav a {
+  color: white;
+  margin-left: 1rem;
+  font-size: 20px;
+  font-family: Ubuntu;
+  font-weight: 10;
+  text-decoration: none;
+}
+.hero {
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.8s ease-in-out;
+}
+
+/* Dark overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-overlay {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.hero-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.hero-arrow.left { left: 20px; }
+.hero-arrow.right { right: 20px; }
+
+/* CATEGORY BAR */
+.category-bar {
+  background: rgb(122, 122, 122);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.85rem;
+}
+.category-bar span{
+    color: #ffffff;
+    font-family: ubuntu;
+    font-weight: 500;
+}
+.category-bar img{
+    height: 20px;
+}
+.products {
+  padding: 4rem 6%;
+  background: #f3f3f3;
+}
+
+/* GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* CARD */
+.product-card {
+  background: rgba(255, 255, 255, 0.093);
+  border-radius: 20px;
+  text-align: center;
+  padding: 1.0rem;
+  border: 1.2px solid #000000;
+  position: relative;
+}
+
+/* CATEGORY TAG */
+.tag {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* IMAGE */
+.product-card img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  margin: 1.5rem auto;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+}
+
+/* TEXT */
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+font-family: Nunito;
+  font-weight: 400;
+  text-align: left;
+}
+
+.price {
+  font-size: 1.1rem;
+  color: rgb(11, 104, 4);
+font-family: Nunito;
+  margin-bottom: 1rem;
+}
+.pct{
+    font-size: 1rem;
+font-family: LXGW Marker Gothic;
+    color: rgb(105, 101, 101);
+    text-decoration: line-through;
+}
+.lay1{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+/* BUTTONS */
+.actions {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.actions button {
+  flex: 1;
+  padding: 0.9rem;
+  border-radius: 100px;
+  border: none;
+  border: 1px solid #000000;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cart {
+  background: #ffffff;
+}
+
+.buy {
+  background: black;
+  color: white;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  padding-bottom: 2rem;
+}
+
+.pagination span {
+  padding: 0.4rem 0.7rem;
+  background: #e0e0e0;
+}
+
+.pagination .active {
+  background: black;
+  color: white;
+}
+
+.category-hero {
+  padding: 3rem;
+}
+
+.category-slider {
+  background: #f0c33c;
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT TEXT */
+.slide-text {
+  max-width: 35%;
+}
+
+.slide-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #3b2f00;
+}
+
+.slide-text p {
+  margin-bottom: 1.5rem;
+  color: #3b2f00;
+}
+
+.slide-text button {
+  padding: 0.7rem 1.6rem;
+  background: #3b2f00;
+  color: #f0c33c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* RIGHT ITEMS */
+.slide-items {
+  display: flex;
+  gap: 3rem;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 140px;
+  margin-bottom: 0.5rem;
+}
+
+.item span {
+  font-weight: 600;
+  color: #3b2f00;
+}
+
+/* CONTROLS */
+.controls {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+}
+
+.dots .active {
+  background: #3b2f00;
+}
