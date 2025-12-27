@@ -1,53 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KORVA</title>
-  <link rel="shortcut icon" href="/images/icon.svg" type="image/x-icon">
-  <link rel="stylesheet" href="/css/style.css">
-  <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"rel="stylesheet"/>
-   <link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="shortcut icon" href="/images/KORVA.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-<!---Header Section--->
+<!-- NAV -->
 <header>
-  <a href="#" class="logo"><img src="/images/KORVA1.png" alt=""></a>
-
-  <ul class="navbar">
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Shop</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Pages</a></li>
-  </ul>
-
-  <div class="icons">
-    <a href="#"><i class="ri-search-line" id="search-icon"></i></a>
-    <a href="#"><i class="ri-user-line"></i></a>
-    <a href="#"><i class="ri-shopping-bag-line"></i></a>
-     <div class="bx bx-menu" id="menu-icon"></div>
-</div>
+  <div class="logo">KORVA</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
 </header>
 
-<!---home Section--->
-<section class="home">
-  <div class="home-text">
-    <h4>In this season, find the best</h4>
-    <h1>Exclusive offer for KORVA Customers</h1>
-    <a href="#" class="btn">Explore Now</a>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <button class="hero-arrow left">&#10094;</button>
+  <div class="hero-content">
+    <h1>HOME PAGE</h1>
+    <button>Shop Collection</button>
   </div>
-  
-  <div>
-
-  </div>
+  <button class="hero-arrow right">&#10095;</button>
 </section>
 
-   <!--- Custom Js Link --->
-   <script type="text/javascript" src="/js/script.js"></script>
-   </body>
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="grid" id="product-grid"></div>
+</section>
+
+<footer>
+  © 2025 KORVA. All rights reserved.
+</footer>
+
+<script>
+/* ---------------- HERO SLIDER ---------------- */
+const hero = document.getElementById("hero");
+const images = [
+  "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+  "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+  "https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+];
+let heroIndex = 0;
+
+function updateHero() {
+  hero.style.backgroundImage = `url(${images[heroIndex]})`;
+}
+updateHero();
+
+document.querySelector(".right").onclick = () => {
+  heroIndex = (heroIndex + 1) % images.length;
+  updateHero();
+};
+document.querySelector(".left").onclick = () => {
+  heroIndex = (heroIndex - 1 + images.length) % images.length;
+  updateHero();
+};
+setInterval(() => {
+  heroIndex = (heroIndex + 1) % images.length;
+  updateHero();
+}, 5000);
+
+/* ---------------- PRODUCTS DATA ---------------- */
+const products = [
+  { id: 1, name: "Phone Holder Saki", price: 29.9, category: "Other", img: "https://i.imgur.com/F8YVJYw.png" },
+  { id: 2, name: "Headset", price: 12.0, category: "Music", img: "https://i.imgur.com/8Q2QZ4n.png" },
+  { id: 3, name: "Adudu Cleaner", price: 29.9, category: "Other", img: "https://i.imgur.com/Qm6P8wK.png" }
+];
+
+/* ---------------- RENDER PRODUCTS ---------------- */
+const grid = document.getElementById("product-grid");
+
+products.forEach(p => {
+  grid.innerHTML += `
+    <div class="card">
+      <span class="tag">${p.category}</span>
+      <img src="${p.img}">
+      <h3>${p.name}</h3>
+      <div class="price">$${p.price}</div>
+      <div class="actions">
+        <button class="cart-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+  `;
+});
+
+/* ---------------- CART ---------------- */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(id) {
+  const item = products.find(p => p.id === id);
+  cart.push(item);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cart-count").innerText = cart.length;
+  alert("Added to cart 🛒");
+}
+
+document.getElementById("cart-count").innerText = cart.length;
+</script>
+
+</body>
 </html>
