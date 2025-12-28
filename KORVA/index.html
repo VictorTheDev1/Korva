@@ -6,105 +6,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KORVA</title>
   <link rel="shortcut icon" href="/images/KORVA.png" type="image/x-icon">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button id="closeCart">✕</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">$0.00</strong>
+    </div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</aside>
+
+
+  <!-- Profile Menu -->
+
+
 
 <!-- NAV -->
 <header>
-  <div class="logo">KORVA</div>
+  <div class="logo"><img src="/images/KORVA Tra.svg" alt=""></div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Cart (<span id="cart-count">0</span>)</a>
+    
+    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg></a>
+   
+ <div class="profile-menu">
+  <a href="#" id="profileIcon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path>
+    </svg>
+  </a>
+
+  <!-- Dropdown -->
+
+    <a href="#"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg> (<span id="cart-count">0</span>)</a>
+   
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <button class="hero-arrow left">&#10094;</button>
+  <button class="hero-arrow left"><svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64"  
+fill="#b2a3a3" viewBox="0 0 24 24"  
+transform="scale(1,-1) ">
+<!--Boxicons v3.0.6 https://boxicons.com | License  https://docs.boxicons.com/free-->
+<path d="M14.65 6.65 9.29 12l5.36 5.35.7-.7L10.71 12l4.64-4.65z"></path>
+</svg></button>
   <div class="hero-content">
-    <h1>HOME PAGE</h1>
-    <button>Shop Collection</button>
-  </div>
-  <button class="hero-arrow right">&#10095;</button>
+  <h1 id="hero-text"></h1>
+</div>
+
+  <button class="hero-arrow right"><svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64"  
+fill="#b2a3a3" viewBox="0 0 24 24"  
+transform="scale(-1,1) ">
+<!--Boxicons v3.0.6 https://boxicons.com | License  https://docs.boxicons.com/free-->
+<path d="M14.65 6.65 9.29 12l5.36 5.35.7-.7L10.71 12l4.64-4.65z"></path>
+</svg></button>
 </section>
 
 <!-- PRODUCTS -->
-<section class="products">
-  <div class="grid" id="product-grid"></div>
-</section>
+<div class="product-card"
+     data-id="1"
+     data-name="Phone Holder Saki"
+     data-price="29.90"
+     data-img="images/Stock Images/st1 - Edited.png">
+
+  <span class="tag"></span>
+  <img src="images/Stock Images/st1 - Edited.png" alt="">
+  <h3>Phone Holder Saki</h3>
+
+  <div class="lay1">
+    <p class="pct">Now 50% Off</p>
+    <p class="price">$29.90</p>
+  </div>
+
+  <div class="actions">
+    <button class="cart">Add to Cart</button>
+    <button class="buy">Buy Now</button>
+  </div>
+</div>
 
 <footer>
   © 2025 KORVA. All rights reserved.
 </footer>
+<script src="/js/main.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/slider.js"></script>
 
-<script>
-/* ---------------- HERO SLIDER ---------------- */
-const hero = document.getElementById("hero");
-const images = [
-  "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
-  "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
-  "https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
-];
-let heroIndex = 0;
-
-function updateHero() {
-  hero.style.backgroundImage = `url(${images[heroIndex]})`;
-}
-updateHero();
-
-document.querySelector(".right").onclick = () => {
-  heroIndex = (heroIndex + 1) % images.length;
-  updateHero();
-};
-document.querySelector(".left").onclick = () => {
-  heroIndex = (heroIndex - 1 + images.length) % images.length;
-  updateHero();
-};
-setInterval(() => {
-  heroIndex = (heroIndex + 1) % images.length;
-  updateHero();
-}, 5000);
-
-/* ---------------- PRODUCTS DATA ---------------- */
-const products = [
-  { id: 1, name: "Phone Holder Saki", price: 29.9, category: "Other", img: "https://i.imgur.com/F8YVJYw.png" },
-  { id: 2, name: "Headset", price: 12.0, category: "Music", img: "https://i.imgur.com/8Q2QZ4n.png" },
-  { id: 3, name: "Adudu Cleaner", price: 29.9, category: "Other", img: "https://i.imgur.com/Qm6P8wK.png" }
-];
-
-/* ---------------- RENDER PRODUCTS ---------------- */
-const grid = document.getElementById("product-grid");
-
-products.forEach(p => {
-  grid.innerHTML += `
-    <div class="card">
-      <span class="tag">${p.category}</span>
-      <img src="${p.img}">
-      <h3>${p.name}</h3>
-      <div class="price">$${p.price}</div>
-      <div class="actions">
-        <button class="cart-btn" onclick="addToCart(${p.id})">Add to Cart</button>
-        <button class="buy-btn">Buy Now</button>
-      </div>
-    </div>
-  `;
-});
-
-/* ---------------- CART ---------------- */
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(id) {
-  const item = products.find(p => p.id === id);
-  cart.push(item);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  document.getElementById("cart-count").innerText = cart.length;
-  alert("Added to cart 🛒");
-}
-
-document.getElementById("cart-count").innerText = cart.length;
-</script>
 
 </body>
 </html>
+  <div class="profile-dropdown" id="profileDropdown">
+    <a href="#">My Account</a>
+    <a href="#">Logout</a>
+  </div>
+</div>
